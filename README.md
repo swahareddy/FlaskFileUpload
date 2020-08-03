@@ -6,6 +6,6 @@ A simple flask application to offer drag and drop to upload files to GCS
 
 
 
-`cd FlaskFileUpload/app_files`
-`set FLASK_RUN=file_upload.py`
-`flask run`
+1. `cd FlaskFileUpload/app_files`
+2. `set FLASK_RUN=file_upload.py`
+3. `flask run`
