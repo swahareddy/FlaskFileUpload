@@ -1,0 +1,77 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}STORM Upload{% endblock %}
+
+{% block main %}
+
+<head>
+    <style>
+    h1 {text-align: center;}
+    form {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+    </style>
+</head>
+
+<h1>GCS File upload</h1>
+<p>Upload files to google cloud storage</p>
+<hr>
+
+<form action ="{{ url_for('upload_file') }}"  method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="exampleFormControlSelect"><h3>Select destination bucket</h3></label>
+      <p>File will be dropped in root directory of bucket itself</p>
+      <select class="form-control" id="exampleFormControlSelect" name="bucket_selected">
+        <option>second_bucket_tejaswa</option>
+        <option>sample-audio-humanity</option>
+        <option>tejaswa_third_bucket</option>
+        <option>bucket_4</option>
+        <option>bucket_5</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label">
+          (Attach multiple files.)
+      </label>
+      <div class="col-sm-9">
+          <span class="btn btn-default btn-file">
+              <input id="input-2" name="multi_file_selected" type="file" class="file" multiple data-show-upload="true" data-show-caption="true">
+          </span>
+      </div>
+  </div>
+
+    <!-- <div class="form-group">
+      <label for="exampleFormControlTextarea1">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="textfieldabdfashufjdakh"></textarea>
+    </div> -->
+
+    <!-- <button type="submit" class="btn btn-primary">Upload</button> -->
+<!-- </form>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col"> -->
+
+
+  <!-- <form action="/uploadscreen" method="POST" enctype="multipart/form-data"> -->
+
+    <!-- <div class="form-group">
+      <label>Select image</label>
+      <div class="custom-file">
+        <label class="custom-file-label" for="pdf">Select file...</label>
+        <input type="file" class="custom-file-input" name="file_selected" id="selected_file">
+      </div>
+    </div> -->
+    <br>
+    <button type="submit" class="btn btn-primary">Upload</button>
+
+      <!-- </form>
+
+    </div>
+  </div>
+</div> -->
+<hr>
+
+{% endblock %}
