@@ -32,6 +32,9 @@ def delete_after_uploading():
 
 @app.route("/uploadscreen", methods=["GET", "POST"])
 def upload_file():
+
+    gcs_contents={'sample-audio-humanity': ['Arnab Goswami 5 Kickass Newshour Debates That Ruled 9pm Indian TV News (online-audio-converter.com).wav', 'How to Design Impenetrable Airport Security (mp3cut.net).mp3', 'Who Is Playing Into The Hands Of China Arnab Goswami Debates On The China Gang (mp3cut.net).mp3', 'Who Is Playing Into The Hands Of China Arnab Goswami Debates On The China Gang (online-audio-converter.com).wav'], 'second_bucket_tejaswa': ['Annotation 2020-07-19 124655.png', 'gdrive_structure.png', 'thatsallfolks.jpg'], 'tejaswa_third_bucket': ['Arnab Goswami 5 Kickass Newshour Debates That Ruled 9pm Indian TV News (mp3cut.net).mp3']}
+
     if request.method=="POST":
         if not request.form.get("bucket_selected"):
             return
@@ -49,7 +52,7 @@ def upload_file():
                 delete_after_uploading()
             return redirect(request.url)
 
-    return render_template("public/upload_image.html")
+    return render_template("public/upload_image.html", gcs_contents=gcs_contents)
 
 if __name__ == '__main__':
    app.run(debug = True)

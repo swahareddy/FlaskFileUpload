@@ -22,11 +22,9 @@
       <label for="exampleFormControlSelect"><h3>Select destination bucket</h3></label>
       <p>File will be dropped in root directory of bucket itself</p>
       <select class="form-control" id="exampleFormControlSelect" name="bucket_selected">
-        <option>second_bucket_tejaswa</option>
-        <option>sample-audio-humanity</option>
-        <option>tejaswa_third_bucket</option>
-        <option>bucket_4</option>
-        <option>bucket_5</option>
+        {% for bucket_name in gcs_contents.keys() %}
+        <option>{{bucket_name}}</option>
+        {% endfor %}
       </select>
     </div>
 

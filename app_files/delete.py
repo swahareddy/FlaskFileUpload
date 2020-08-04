@@ -1,8 +1,8 @@
 from google.cloud import storage
 import os
+import time
+start_time=time.time()
 print('Credentials from environ: {}'.format(os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')))
-
-
 
 def list_bucket_contents():
     storage_client = storage.Client()
@@ -21,4 +21,4 @@ def list_bucket_contents():
             bucket_contents[bucket.name]=list_blobs(bucket.name)
     return bucket_contents
 print(list_bucket_contents())
-
+print(time.time() - start_time)
